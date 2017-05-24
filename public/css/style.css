@@ -1,3 +1,174 @@
 .navbar-logo-img {
 	height: 45px;
 }
+body{
+	background-image: url(../images/bg_cork-wallet.png);
+	background-repeat: repeat
+}
+
+div.container {
+	width: 100%;
+	border:1px solid gray;
+}
+header, footer {
+
+	padding: 1em;
+	color:white;
+	background-color: black;
+	clear: left;
+	text-align: center;
+}
+nav ul {
+
+	list-style-type: none;
+	padding: 0;
+}
+nav {
+
+	float: left;
+	max-width: 160px;
+	margin: 0;
+	padding: 1em;
+}
+p{
+
+	color:black;
+}
+nav ul a {
+
+	text-decoration: none;
+}
+article {
+
+	margin-left: 170px;
+	border-left: 1px 
+	solid gray;
+	padding: 1em;
+	overflow:hidden;
+}
+
+.container{
+	margin:auto;
+	width: 960px;
+}
+
+
+.body{
+	clear:left;
+	border-top: 3px solid #4aaaa5;
+	margin: auto;
+	width: 100%;
+    overflow:auto;
+}
+
+
+.myDivBig{
+	float: left;
+	background-color: #ffffff;
+	color:#777777;
+	width:650px;
+	margin: 10px 10px 50px 0px;
+	padding:10px 5px;
+}
+
+
+
+.titleLab{
+	font-weight: bolder;
+	font-size: 22px;
+	color: #4aaaa5;
+}
+
+.myImg{
+    float: left;
+    clear:left;
+	margin:10px 10px 0px 0px;
+}
+
+.imgHover:hover{
+	border:1px solid black;
+}
+
+.myLabel,  .myDivBig{
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.heading{
+	background-color: #ffffff;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+    overflow:auto;
+	width:100%;
+	margin: auto;
+}
+
+.myLabel{
+	float:left;
+	margin:0px auto 0px 20px;
+	padding:15px 15px;
+	background-color: #4aaaa5;
+	color: white;
+}
+
+.myPages{	
+	float:right;
+	margin:20px 60px 0px 0px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+}
+
+li a {
+    color: #777777;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:980px) and (min-width:770px){
+	.container{ width:100%; }
+	.body, .footer, .heading{
+		width:970px;
+	}
+	.myDivBig{
+		width:650px;
+	}
+	
+}
+
+@media screen and (max-width:768px) and (min-width:642px){
+	.container{ width:100%; }
+	.body, .footer, .heading{
+		width:750px;
+	}
+	.myDivBig{
+		width:650px;
+	}
+	
+}
+
+@media screen and (max-width:640px){
+	.container{ width:100%; }
+	.body, .footer, .heading{
+		width:630px;
+	}
+	.heading{
+		position:static;
+	}
+	.myDivBig{
+		width:630px;
+	}
+	
+}
