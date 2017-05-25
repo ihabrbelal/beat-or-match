@@ -1,8 +1,10 @@
 // dependicies requires
 
-var bodyParser = require("body-parser");
+var amazon = require('amazon-product-api');
 var express = require("express");
-var mongojs = require("mongojs");
+var bodyParser = require("body-parser");
+var path = require("path");
+var mysql = require("mysql");
 // var mongoose = require("mongoose");
 // var logger = require("morgan");
 
@@ -16,46 +18,64 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(express.static(`${__dirname}/public`));
 
 
-// Database configuration
-// Save the URL of our database as well as the name of our collection
-var databaseUrl = "beatormatch";
-var collections = ["inventory", "orders"];
-
-// // app path
-// require("./app/routing/apiRoutes")(app);
-// require("./app/routing/htmlRoutes")(app);
-app.use(express.static("public"));
-
-// Use mongojs to hook the database to the db variable
-var db = mongojs(databaseUrl, collections);
-
-// This makes sure that any errors are logged if mongodb runs into an issue
-db.on("error", function(error) {
-    console.log("Database Error:", error);
-});
-
-// Routes
 
 
-app.get("/all", function(req, res) {
-    db.inventory.insert({ "upc": 89859485, "name": "toshiba laptop 15inc" }, function(err, doc) {
+// ========================================================//
+// setting up database connections//
+// ========================================================//
 
-        db.inventory.find({}, function(error, found) {
-            // Log any errors if the server encounters one
-            if (error) {
-                console.log(error);
-            }
-            // Otherwise, send the result of this query to the browser
-            else {
-                res.json(found);
-            }
-        });
+
+var connection;
+var JAWSDB_URL = "mysql://zhjfgifgk712xaou:p6tilh0efzx9j5zo@vvfv20el7sb2enn3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/hg7anv85qr3gmo6u"
+
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+    connection = mysql.createConnection({
+        host: "localhost",
+        port: 3306,
+        user: "root",
+        password: "root",
+        database: "beatormatch_db"
     });
+};
+
+// amazon npm
+var client = amazon.createClient({
+    awsId: "AKIAITLLCYPY6ARKPO5A",
+    awsSecret: "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",
+    awsTag: "logylink-20"
+});
+// ======================================================== //
+// exports //
+// ======================================================== //
+
+module.exports = connection;
+module.exports.client;
+
+connection.connect(function(err) {
+    if (err) {
+        console.error("error connecting: " + err.stack);
+        return;
+    }
+
+    console.log("connected as id " + connection.threadId);
+
 });
 
-// server lisetnner 
+// ======================================================== //
+// app path //
+// ========================================================//
+
+require("./routing/routes.js")(app);
+
+// ======================================================== //
+// server lisetnner //
+// ======================================================== //
+
 app.listen(PORT, function() {
     console.log('this is port ' + PORT);
 

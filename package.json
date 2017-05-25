@@ -18,10 +18,13 @@
   },
   "homepage": "https://github.com/ihabrbelal/beat-or-match#readme",
   "dependencies": {
+    "amazon-product-api": "^0.4.3",
     "body-parser": "^1.17.1",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
     "mongojs": "^2.4.0",
-    "mongoose": "^4.9.9"
+    "mongoose": "^4.9.9",
+    "mysql": "^2.13.0",
+    "passport": "^0.3.2"
   }
 }
