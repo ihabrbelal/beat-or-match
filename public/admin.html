@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/png" href="/images/logo.jpg">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,10 +97,11 @@
     <div class="container">
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>Beat or Match!</h1>
-            <p>Welcome to the place you would guranteed get the best price on web</p>
-            <p><a class="btn btn-primary btn-large">Call to action!</a>
-            </p>
+            <img src="images/logo.jpg" width=200px>
+            <div style="float:right">
+                <h1>Beat or Match!</h1>
+                <p>Welcome to the place you would guranteed get the best price on web</p>
+            </div>
         </header>
         <hr>
         <!-- Title -->
@@ -108,10 +110,11 @@
                 <div class="col-md-4">
                     <div class="addItemForm">
                         <h4 class="heading"> Add New Item <span></span></h4>
-                        <div class="form">
+                        <div class="form_main">
                             <form method="post" id="addItem" name="addItem">
                                 <input type="text" id='category' required="" placeholder="Category" value="" name="category" class="txt">
                                 <input id='upc' type="text" required="" placeholder="UPC" value="" name="upc" class="txt">
+                                <input id='asin' type="text" required="" placeholder="ASIN" value="" name="asin" class="txt">
                                 <input id='name' type="text" required="" placeholder="Item Name" value="" name="name" class="txt">
                                 <input id='price' type="text" required="" placeholder="Price" value="" name="price" class="txt">
                                 <input id='image' type="text" placeholder="Image link" value="" name="image" class="txt">

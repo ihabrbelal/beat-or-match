@@ -18,6 +18,7 @@ $(document).ready(function() {
         var itemsObject = {
             category: $('#category').val(),
             upc: $('#upc').val(),
+            asin: $('#asin').val(),
             product_name: $('#name').val(),
             product_desc: $('#desc').val(),
             image: $('#image').val(),
@@ -36,6 +37,7 @@ $(document).ready(function() {
             });
         $('#category').val("");
         $('#upc').val("");
+        $('#asin').val("");
         $('#name').val("");
         $('#desc').val("");
         $('#image').val("");

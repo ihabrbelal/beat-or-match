@@ -24,7 +24,9 @@ var displyProducts = function() {
         console.log($('#productsHolder'));
 
         for (var i = 0; i < response.length; i++) {
-            var productDiv = $("<div class ='productHolder thumbnail hero-feature'>");
+
+
+            var productDiv = $("<div class ='productHolder thumbnail hero-feature view effect'>");
             var productCaption = $("<div>");
             var productImage = $("<img>");
             productImage.attr("alt", response[i].product_name);
@@ -36,12 +38,16 @@ var displyProducts = function() {
             var price = response[i].price;
             var amazonPrice = response[i].amazonPrice;
             var upc = response[i].upc;
+            if (price > amazonPrice) {
+                price = amazonPrice;
+
+            }
 
 
 
             productCaption.append("<h3>" + name + "</h3>");
             productCaption.append("<div class ='desc'>" + "<p>" + desc + "</p>" + "</div");
-            productCaption.append("<p>" + "<a class='btn btn-primary'>" + "Amazon Price " + amazonPrice + "</a>");
+            productCaption.append("<p>" + "<a class='btn btn-primary'>" + "Amazon Price $ " + amazonPrice + "</a>");
             productCaption.append("<p>" + "<a class='btn btn-primary'>" + "Our Price: $" + price + "</a>");
             productCaption.append("<p>" + "<a class='btn btn-primary'>" + "Buy Now" + "</a>");
             productDiv.append(productImage);
