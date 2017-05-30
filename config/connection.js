@@ -2,8 +2,7 @@ var mysql = require("mysql");
 
 var connection;
 
-var JAWSDB_URL = "mysql://zhjfgifgk712xaou:p6tilh0efzx9j5zo@vvfv20el7sb2enn3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/hg7anv85qr3gmo6u"
-
+var JAWSDB_URL = "mysql://bwm1st7n5ut9qcfi:bleoejk4bg5xp586@mgs0iaapcj3p9srz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/rjf2m60m18uwmblq"
 
 
 
