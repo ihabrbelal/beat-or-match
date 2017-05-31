@@ -47,8 +47,8 @@ var displyProducts = function() {
 
             productCaption.append("<h3>" + name + "</h3>");
             productCaption.append("<div class ='desc'>" + "<p>" + desc + "</p>" + "</div");
-            productCaption.append("<p>" + "<a class='btn btn-primary'>" + "Amazon Price $ " + amazonPrice + "</a>");
-            productCaption.append("<p>" + "<a class='btn btn-primary'>" + "Our Price: $" + price + "</a>");
+            productCaption.append("<p>" + "<div class ='amazon'>" + "Amazon Price $ " + amazonPrice + "</div>" + " </p>");
+            productCaption.append("<p>" + "<div class='ourPrice'>" + "Our Price: $ " + price + "</a>");
             productCaption.append("<p>" + "<a class='btn btn-primary'>" + "Buy Now" + "</a>");
             productDiv.append(productImage);
             productDiv.append(productCaption);

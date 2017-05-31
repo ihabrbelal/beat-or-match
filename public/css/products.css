@@ -6,6 +6,23 @@
     margin: 20px;
 }
 
+.amazon {
+    background-color: navy;
+    color: white;
+    width: 200px;
+    text-align: center;
+    margin-left: 20%
+}
+
+.ourPrice {
+    background-color: red;
+    color: white;
+    width: 200px;
+    text-align: center;
+    margin-left: 20%;
+    margin-bottom: 10px;
+}
+
 
 /*    * {
     -moz-box-sizing: border-box;
