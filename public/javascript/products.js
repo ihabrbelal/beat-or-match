@@ -28,7 +28,7 @@ var displyProducts = function() {
 
             var productDiv = $("<div class ='productHolder thumbnail hero-feature view effect'>");
             var productCaption = $("<div>");
-            var beatormatch = $("<div style= 'float:left; width:100px; margin-left:20px;'>")
+            var beatormatch = $("<div style= 'float:left; width:70px; margin-left:20px;'>")
             var productImage = $("<img>");
             productImage.attr("alt", response[i].product_name);
             productImage.attr("src", response[i].image);
