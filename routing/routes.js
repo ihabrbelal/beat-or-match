@@ -77,38 +77,6 @@ module.exports = function(app) {
             var theUpc;
             //pull UPC from data
 
-            /*
-            for (i = 0; i < products.length; i++) {
-                product = products[i];
-                theUpc = product.upc;
-                theAsin = product.asin;
-                console.log('this is ASIN: ', theAsin);
-                array.push(theUpc);
-                asinArray.push(theAsin);
-            }
-            //  making call to amazon
-            client.itemLookup({
-                idType: 'ASIN',
-                itemId: asinArray.join(','),
-                responseGroup: 'ItemAttributes, Offers'
-            }, function(err, results, response) {
-                if (err) {
-                    console.log(JSON.stringify(err))
-                } else {
-                    for (var i = 0; i < array.length; i++) {
-                        if (results[i].ItemAttributes[0].ListPrice) {
-                            products[i].amazonPrice = parseFloat((results[i].ItemAttributes[0].ListPrice[0].FormattedPrice[0]).substr(1).replace(/,/g, '')).toFixed(2);
-                        } else {
-                            products[i].amazonPrice = "Not available on amazon"
-                        }
-                    }
-                    res.json(products);
-                };
-            });
-        });
-    });
-*/
-
 
             //pull UPC from data
             for (i = 0; i < products.length; i++) {
@@ -133,7 +101,7 @@ module.exports = function(app) {
                     for (var i = 0; i < array.length; i++) {
                         if (results[i].ItemAttributes[0].ListPrice) {
                             products[i].amazonPrice = parseFloat((results[i].ItemAttributes[0].ListPrice[0].FormattedPrice[0]).substr(1).replace(/,/g, '')).toFixed(2);
-                            var amazonPrice = results[i].ItemAttributes[0].ListPrice[0].Amount;
+                            var amazonPrice = parseFloat((results[i].ItemAttributes[0].ListPrice[0].FormattedPrice[0]).substr(1).replace(/,/g, '')).toFixed(2);
                             console.log("amazonPrice: " + amazonPrice);
                             var ourPrice = products[i].price;
                             // console.log("You out here! " + theUpc);

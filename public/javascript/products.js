@@ -28,6 +28,7 @@ var displyProducts = function() {
 
             var productDiv = $("<div class ='productHolder thumbnail hero-feature view effect'>");
             var productCaption = $("<div>");
+            var beatormatch = $("<div style= 'float:left; width:100px; margin-left:20px;'>")
             var productImage = $("<img>");
             productImage.attr("alt", response[i].product_name);
             productImage.attr("src", response[i].image);
@@ -35,13 +36,13 @@ var displyProducts = function() {
 
             var name = response[i].product_name;
             var desc = response[i].product_desc;
-            var price = response[i].price;
+            var price = parseFloat(response[i].price).toFixed(2);
             var amazonPrice = response[i].amazonPrice;
             var upc = response[i].upc;
-            if (price > amazonPrice) {
-                price = amazonPrice;
+            // if (price > amazonPrice) {
+            //     price = amazonPrice;
 
-            }
+            // }
 
 
 
@@ -50,9 +51,17 @@ var displyProducts = function() {
             productCaption.append("<p>" + "<div class ='amazon'>" + "Amazon Price $ " + amazonPrice + "</div>" + " </p>");
             productCaption.append("<p>" + "<div class='ourPrice'>" + "Our Price: $ " + price + "</a>");
             productCaption.append("<p>" + "<a class='btn btn-primary'>" + "Buy Now" + "</a>");
+
+            productDiv.append(beatormatch);
             productDiv.append(productImage);
             productDiv.append(productCaption);
             $('#productsHolder').append(productDiv);
+
+            if (price === amazonPrice) {
+                beatormatch.append("<img src='images/match.png'></img>");
+            } else if (price < amazonPrice) {
+                beatormatch.append("<img src='images/beatOrMatchIcons.png'></img>");
+            };
 
 
         }
