@@ -28,7 +28,7 @@ var displyProducts = function() {
 
             var productDiv = $("<div class ='productHolder thumbnail hero-feature view effect'>");
             var productCaption = $("<div>");
-            var beatormatch = $("<div style= 'float:left; width:70px; margin-left:20px;'>")
+            var beatormatch = $("<div style= 'float:left; width:60px; margin-left:20px;'>")
             var productImage = $("<img>");
             productImage.attr("alt", response[i].product_name);
             productImage.attr("src", response[i].image);
@@ -43,6 +43,10 @@ var displyProducts = function() {
             //     price = amazonPrice;
 
             // }
+            var compAmazon = response[i].amazonPrice * 100;
+            var compPrice = response[i].price * 100;
+            console.log("compAmazon: ", compAmazon);
+            console.log("compPrice: ", compPrice);
 
 
 
@@ -57,9 +61,9 @@ var displyProducts = function() {
             productDiv.append(productCaption);
             $('#productsHolder').append(productDiv);
 
-            if (price === amazonPrice) {
+            if (compPrice === compAmazon) {
                 beatormatch.append("<img src='images/match.png'></img>");
-            } else if (price < amazonPrice) {
+            } else if (compPrice < compAmazon) {
                 beatormatch.append("<img src='images/beatOrMatchIcons.png'></img>");
             };
 
