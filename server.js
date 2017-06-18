@@ -43,21 +43,6 @@ if (process.env.JAWSDB_URL) {
     });
 };
 
-// amazon npm
-// var client = amazon.createClient({
-//     awsId: " AKIAJJ6NIRW4TL6FF4UA",
-//     awsSecret: "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",
-//     awsTag: "logylink"
-//         // awsTag: "logylink-20"
-// });
-
-
-
-var client = amazon.createClient({
-    awsId: "AKIAIAWUUUGIAB7KOQBQ",
-    awsSecret: "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",
-    awsTag: "logylink-20"
-});
 
 // ======================================================== //
 // exports //
