@@ -5,9 +5,9 @@ var express = require('express');
 var app = express();
 // amazon npm
 var client = amazon.createClient({
-    awsId: "AKIAIZPB6VXBSVCLMROA",
-    awsSecret: "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",
-    // awsTag: "logylink-20"
+    awsId: "",
+    awsSecret: "",
+    // awsTag: ""
 });
 
 module.exports = function(app) {
